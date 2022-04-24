@@ -70,7 +70,7 @@
                 Conclusion
             </li>
         </ol>
-        <img class="place bottom right logo-slide" src="media/logo_ugent_en.svg" alt="Square picture placeholder.">
+        <img class="place bottom right logo-slide" src="media/logo_ugent_en.svg" alt="Ghent University">
     </section>
 
     <section class="slide">
@@ -85,7 +85,7 @@
                 <li><b>Goal</b>: Develop a <a href="https://solidproject.org/TR/">specification</a> for decentralized personal data storage servers (<em>Pods</em>)
                 </li>
             </ul>
-            <img class="place bottom right logo-slide" src="media/logo_ugent_en.svg" alt="Square picture placeholder.">
+            <img class="place bottom right logo-slide" src="media/logo_ugent_en.svg" alt="Ghent University">
         </div>
     </section>
 
@@ -109,7 +109,7 @@
                 </li>
                 <li>By building upon existing Web standards</li>
             </ul>
-            <img class="place bottom right logo-slide" src="media/logo_ugent_en.svg" alt="Square picture placeholder.">
+            <img class="place bottom right logo-slide" src="media/logo_ugent_en.svg" alt="Ghent University">
         </div>
     </section>
 
@@ -139,53 +139,132 @@
                         <li>Expressed as Linked Data</li>
                     </ul>
             </ul>
-            <img class="place bottom right logo-slide" src="media/logo_ugent_en.svg" alt="Square picture placeholder.">
+            <img class="place bottom right logo-slide" src="media/logo_ugent_en.svg" alt="Ghent University">
         </div>
     </section>
 
     <section class="slide">
-        <h2>Authorization in Solid: Today</h2>
-        <p><b>Uses concept of WebID to authorize access to resources</b></p>
+        <h2>Authorization in Solid: Web Access Control</h2>
         <ul>
+            <b>Uses concept of WebID to authorize access to resources</b>
             <li>Access control rules at Web Scale</li>
             <li>Works reasonably well in social interactions</li>
         </ul>
-        <p><b>Authorization on single resource or folder (container)</b></p>
         <ul>
+            <b>Authorization on single resource or folder (container)</b>
             <li>Similar to sharing features in e.g. Google Drive, Dropbox, ...</li>
             <li>Inheritance of permissions</li>
         </ul>
-        <img class="place bottom right logo-slide" src="media/logo_ugent_en.svg" alt="Square picture placeholder.">
+        <img class="place bottom right logo-slide" src="media/logo_ugent_en.svg" alt="Ghent University">
     </section>
-
-
 
     <section class="slide">
         <h2>Authorization in Solid: Limitations</h2>
+        <ul>
+            <li>Use of IRIs to identify resources and authorized parties.
+                <ul>
+                    <li>Resource naming strategy is mostly <b>arbitrary</b> (developer's choice)</li>
+                    <li>How does one verify WebID of an agent? (cfr. <b>phishing</b>)</li>
+                </ul>
+            </li>
+            <li>Inheritance mechanism
+                <ul>
+                    <li>Can be <b>counter-intuitive</b></li>
+                    <li>Lead to <b>unintended</b> information disclosure</li>
+                </ul>
+            </li>
+            <li>Ad-hoc nature of permissions &#8658; <b>increase in complexity</b> for end-user</li>
+        </ul>
+        <img class="place bottom right logo-slide" src="media/logo_ugent_en.svg" alt="Ghent University">
+    </section>
+
+    <section class="slide">
+        <h2>Web Access Control: Example</h2>
+        <pre>
+            <code>@prefix acl: &lt;http://www.w3.org/ns/auth/acl#&gt;.</code>
+            <code># Your doctor has Read & Write Access to your Medical Records</code>
+            <code>&lt;#records&gt; a acl:Authorization;</code>
+            <code>    acl:agent &lt;https://nhs.gov.uk/id/123#me&gt;;</code>
+            <code>    acl:default &lt;./MedicalRecords/&gt;;</code>
+            <code>    acl:mode acl:Read, acl:Write.</code>
+        </pre>
+        <img class="place bottom right logo-slide" src="media/logo_ugent_en.svg" alt="Ghent University">
+    </section>
+    <section class="slide">
+        <h2>Web Access Control: Example</h2>
+        <pre>
+            <code>@prefix acl: &lt;http://www.w3.org/ns/auth/acl#&gt;.</code>
+            <code># Your doctor has Read & Write Access to your Medical Records</code>
+            <code>&lt;#records&gt; a acl:Authorization;</code>
+            <code>    acl:agent <mark>&lt;https://nhs.gov.uk/id/123#me&gt;</mark>;</code>
+            <code>    acl:default <mark>&lt;./MedicalRecords/&gt;</mark>;</code>
+            <code>    acl:mode acl:Read, acl:Write.</code>
+        </pre>
+        <img class="place bottom right logo-slide" src="media/logo_ugent_en.svg" alt="Ghent University">
     </section>
 
     <section class="slide">
         <h2>Problem Statement</h2>
+        <ul>
+            <b>Web Access Control as an Access Control Policy</b>
+            <li>Suited for simple use cases</li>
+            <li>Lacks expressivity & interpretability in data processing applications</li>
+            <b>Limited research into implemention of data sharing patterns in Solid</b>
+            <li>With required legal and technical safeguards</li>      
+            <b>Prior research on applying more expressive policy languages in Solid
+            (i.e. <a href="https://ieeexplore.ieee.org/document/9583717">ODRL</a>, <a href="https://www.scitepress.org/Link.aspx?doi=10.5220/0009143206550662">SPECIAL</a>, ...)</b>
+            <li>Further work needed to integrate these languages into Solid</li>
+            </li>
+        </ul>
+        <img class="place bottom right logo-slide" src="media/logo_ugent_en.svg" alt="Ghent University">
+    </section>
+
+    <section class="slide">
+        <h2>Research Objective</h2>
+        <ul>
+            <b>Identifying shortcomings of Solid's existing Access Control mechanism</b>
+            <li>And specifically how it is used by developers.</li>
+            <b>Reference architecture for complex data processing applications in Solid</b>
+            <li>Reconciling end-user and legal requirements for data processing</li>
+            <li>Through abstractions built on Solid's existing authorization model</li>
+            <b style="color: #3e3e3e8a">Implementation of this architecture</b>
+        </ul>
     </section>
 
     <section class="slide">
         <h2>Related Work</h2>
+        <ul>
+            <b>Data Privacy Vocabulary</b>
+            <li>Lorep ipsum</li>
+            <b>ODRL</b>
+            <li>Lorep ipsum</li>
+            <b>SPECIAL</b>
+            <li>Lorep ipsum</li>
+        </ul>
     </section>
 
     <section class="slide">
         <h2>Architecture: Background</h2>
+        <ul>
+            <li>Solid's Data Interoperability Panel</li>
+            <li>Linked Data Integrity & Authentication</li>
+        </ul>
     </section>
 
     <section class="slide">
         <h2>Architecture: Vision</h2>
+        <!-- Two columns highlighting the different realms-->
     </section>
 
     <section class="slide">
         <h2>Architecture: Proposal</h2>
+        <!-- Graphic of the proposed architecture -->
     </section>
 
     <section class="slide">
         <h2>Implementation</h2>
+        <!-- Aim of the implementation is to deliver the necessary building blocks for 
+        a modular authorization agent that can be supplemented with distinct policy languages -->
     </section>
 
     <section class="slide">
