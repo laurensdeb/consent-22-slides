@@ -41,7 +41,7 @@
         }
 
         .unset-margin-bottom {
-            margin-bottom: 0;
+            margin-bottom: 0 !important;
         }
     </style>
 </head>
@@ -337,7 +337,7 @@
         <h2 style="margin-bottom:10px">Architecture: Proposal</h2>
         <div class="columns" style="grid-template-columns: 1.75fr .25fr;">
             <ul>
-                <li>Access Management app delivers Processing Grant
+                <li><b>Access Management app</b> delivers Processing Grant
                     <ul>
                         <li>Matching against preferences, legal requirements, ...</li>
                     </ul>
@@ -348,10 +348,10 @@
                         <li>Processing Grants by the Access Management app</li>
                     </ul>
                 </li>
-                <li>Authorization Agent receives concrete Access Needs
+                <li><b>Authorization Agent</b> receives concrete Access Needs
                     <ul>
                         <li>In terms of Shape Trees</li>
-                        <li>Matches these agains the Processing Grants</li>
+                        <li>Matches these against Processing Grants</li>
                     </ul>
                 </li>
             </ul>
@@ -362,9 +362,44 @@
     </section>
 
     <section class="slide">
+        <h2 class="unset-margin-bottom">Discussion</h2>
+        <ul>
+            <li>Avoids introduction of legal or business concepts into low-level authorization mechanism
+                <ul>
+                    <li><b>Layered abstractions</b> on top of Access Control</li>
+                    <li><b>Reduced</b> assumptions on features supported by Solid Pod</li>
+                </ul>
+            </li>
+            <li>Efficiency of evaluating policies
+                <ul>
+                    <li>Introduction of an <b>out-of-band</b> negotiation step</li>
+                    <li>No additional policy evaluation required during requests</li>
+                </ul>
+            </li>
+            <li>However, <b>challenges</b> still exist
+                <ul>
+                    <li>Ex-post compliance checking on Access Control Lists, defining a suitable policy language, ...</li>
+                </ul>
+            </li>
+        </ul>
+        <img class="place bottom right logo-slide" src="media/logo_ugent_en.svg" alt="Ghent University">
+    </section>
+
+    <section class="slide">
         <h2>Implementation</h2>
         <!-- Aim of the implementation is to deliver the necessary building blocks for 
         a modular authorization agent that can be supplemented with distinct policy languages -->
+        <ul>
+            <li>Extension to the Community Solid Server</li>
+            <li>Provides a reference implementation of an Authorization agent
+                <ul>
+                    <li>Integrates with an Access Management app</li>
+                    <li>Matching Access Needs against Grants via Policies</li>
+                    <li>Modify relevant Access Control Rules in the Pod</li>
+                </ul>
+            </li>
+            <li>Currently under development</li>
+        </ul>
         <img class="place bottom right logo-slide" src="media/logo_ugent_en.svg" alt="Ghent University">
     </section>
 
