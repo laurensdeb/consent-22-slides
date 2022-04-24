@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <title>A Policy-Oriented Architecture for Enforcing Consent in Solid - CONSENT '22</title>
     <meta charset="utf-8">
@@ -11,16 +12,25 @@
             --color-key: #1E64C8;
             font: 24px/2 'UGent Panno Text', 'Roboto', sans-serif !important;
         }
+
         h2.title {
             color: #1E64C8;
         }
+
+        b {
+            color: #1E64C8;
+        }
+        small {
+            font-size: 0.5em;
+        }
     </style>
 </head>
+
 <body class="shower list">
 
     <header class="caption">
         <h1>A Policy-Oriented Architecture for Enforcing Consent in Solid</h1>
-        <p>Laurens Debackere</p>
+        <p>Laurens Debackere, Pieter Colpaert, Ruben Taelman, Ruben Verborgh</p>
         <p>IDLab, Department of Electronics and Information Systems, Ghent University - imec</p>
     </header>
 
@@ -28,10 +38,10 @@
         <!-- Create your first slide -->
         <h5>COnSeNT 2022 &bullet; 26 April 2022</h5>
         <h2 class="title">A Policy-Oriented Architecture for Enforcing Consent in Solid</h2>
-        <h4>Laurens Debackere, Ghent University</h4>
-        <img src="media/logo_ugent_en.svg" height="70" style="padding-right: 50px"/>
-        <img src="media/imec.svg" height="50" style="padding-bottom: 10px"/>
-        <img src="media/idlab.svg" height="40" style="padding-bottom: 10px"/>
+        <h4><em>Laurens Debackere</em>, Pieter Colpaert, Ruben Taelman, Ruben Verborgh</h4>
+        <img src="media/logo_ugent_en.svg" height="70" style="padding-right: 50px" />
+        <img src="media/imec.svg" height="50" style="padding-bottom: 10px" />
+        <img src="media/idlab.svg" height="40" style="padding-bottom: 10px" />
     </section>
 
     <section class="slide">
@@ -40,7 +50,7 @@
             <li>An introduction to <a href="https://solidproject.org/">Solid</a>
                 <ul>
                     <li>What is Solid?</li>
-                    <li>Authorization in Solid: Issues & Limitations</li>
+                    <li>Authorization in Solid</li>
                 </ul>
             </li>
             <li>
@@ -58,10 +68,134 @@
         </ol>
     </section>
 
+    <section class="slide">
+        <h2>An introduction to the Solid project</h2>
+        <div class="columns two">
+            <img src="https://solidproject.org/assets/img/solid-emblem.svg" height="300" />
+            <ul>
+                <li>Project aiming to restore end-users' control over their data</li>
+                <li>Brainchild of Sir Tim-Berners Lee<br />(cfr. <a
+                        href="https://webfoundation.org/2017/03/web-turns-28-letter/">Three Challenges for the Web</a>,
+                    2017)</li>
+                <li><b>Goal</b>: Develop a <a href="https://solidproject.org/TR/">specification</a> for decentralized personal data storage servers (<em>Pods</em>)
+                </li>
+            </ul>
+        </div>
+    </section>
+
+    <section class="slide">
+        <h2>What is Solid?</h2>
+        <div class="columns two">
+            <p>
+                <img src="media/data-pods.svg" width="400" style="padding-top: 50px" />
+                <small>Graphic by Ruben Verborgh, from <a href="https://rubenverborgh.github.io/WebFundamentals">Web Fundamentals</a></small>
+            </p>
+            <ul>
+                <li>A new way of building applications and services on the Web
+                    <ul lang="ru">
+                        <li><b>Separating</b> apps and data</li>
+                    </ul>
+                </li>
+                <li>A new model for data governance
+                    <ul lang="ru">
+                        <li>Returning <b>user choice</b> to the Web</li>
+                    </ul>
+                </li>
+                <li>By building upon existing Web standards</li>
+            </ul>
+        </div>
+    </section>
+
+    
+    <section class="slide">
+        <h2>What is Solid?</h2>
+        <div class="columns three">
+            <ul>
+                <b>Linked Data Platform</b>
+                <ul lang="ru">
+                    <li>Read/write-access to resources</li>
+                    <li>Specific affordances for handling Linked Data</li>
+                </ul>
+            </ul>
+            <ul>
+                <b>WebID & Solid OIDC</b>
+                    <ul lang="ru">
+                        <li>Identification and authentication</li>
+                        <li>In a decentralized manner</li>
+                    </ul>
+                </ul>
+            <ul>
+                <b>Web Access Control</b>
+                    <ul lang="ru">
+                        <li>Define Access Control Policy over resources</li>
+                        <li>Based on Access Control Lists</li>
+                        <li>Expressed as Linked Data</li>
+                    </ul>
+            </ul>
+        </div>
+    </section>
+
+    <section class="slide">
+        <h2>Authorization in Solid: Today</h2>
+    </section>
+
+    <section class="slide">
+        <h2>Authorization in Solid: Limitations</h2>
+    </section>
+
+    <section class="slide">
+        <h2>Problem Statement</h2>
+    </section>
+
+    <section class="slide">
+        <h2>Related Work</h2>
+    </section>
+
+    <section class="slide">
+        <h2>Architecture: Background</h2>
+    </section>
+
+    <section class="slide">
+        <h2>Architecture: Vision</h2>
+    </section>
+
+    <section class="slide">
+        <h2>Architecture: Proposal</h2>
+    </section>
+
+    <section class="slide">
+        <h2>Implementation</h2>
+    </section>
+
+    <section class="slide">
+        <h2>Conclusion</h2>
+    </section>
+
+    <section class="slide">
+        <h2>A Policy-Oriented Architecture for Enforcing Consent in Solid</h2>
+        <div class="columns two">
+            <p><b>Laurens Debackere</b></br>
+                <em>IDLab, Department of Electronics and Information Systems, Ghent University - imec</em><br />
+                <b>Mail:</b> Laurens.Debackere@UGent.be
+            </p>
+            <p><b>Slides available online at:</b><br /> <a
+                    href="https://github.com/laurensdeb/consent-22-slides">github.com/laurensdeb/consent-22-slides</a>
+                <span>
+                    <img src="media/logo_ugent_en.svg" height="70" style="padding-right: 50px; padding-top: 20px;" />
+                    <img src="media/imec.svg" height="50" style="padding-bottom: 10px" />
+                    <img src="media/idlab.svg" height="40" style="padding-bottom: 10px" />
+            </p>
+            </span>
+        </div>
+    </section>
+
     <footer class="badge">
         <a href="https://github.com/laurensdeb/consent-22-slides">Find me on Github</a>
     </footer>
 
+    <p>This research is supported by <b>SolidLab Vlaanderen</b> (Flemish Government, EWI and RRF project
+        VV023/10).<br />
+        Ruben Taelman is a postdoctoral fellow of the Research Foundation - Flanders (FWO) (1274521N).</p>
     <p>Copyright © 2022 UGent</p>
 
 
@@ -71,4 +205,5 @@
     <!-- Copyright © 2022 UGent -->
 
 </body>
+
 </html>
