@@ -9,6 +9,7 @@
   },
   "dependencies": {
     "@shower/core": "^3.3.0",
-    "@shower/material": "^2.5.0"
+    "@shower/material": "^2.5.0",
+    "@shower/cli": "^0.3.1"
   }
 }
