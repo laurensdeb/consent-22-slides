@@ -57,17 +57,8 @@
         <p style="text-align: right; padding-right: 2em;"><img src="media/logo_ugent_en_white.svg" height="100" /></p>
     </header>
 
-    <section>
-        <ul>
-            <li><b>Pre-print paper:</b> Available via <a href="preprint/paper.pdf">Github</a></li>
-            <li><b>Architectural diagrams:</b>
-                <ul>
-                    <li><a href="preprint/overview.pdf">Component overview</a></li>
-                    <li><a href="preprint/sequence.pdf">Sequence Diagram</a></li>
-                </ul>
-            </li>
-
-        </ul>
+    <section class="badge">
+        <a href="preprint/paper.pdf" style="margin-left: 0em;">Discover the pre-print paper</a>
     </section>
 
     <section class="slide">
@@ -93,7 +84,7 @@
                 Problem Statement
             </li>
             <li>
-                An architecture for implementing consent in Solid
+                An architecture for enforcing data protection in Solid
             </li>
             <li>
                 Implementation
@@ -390,8 +381,8 @@
         <!-- Aim of the implementation is to deliver the necessary building blocks for 
         a modular authorization agent that can be supplemented with distinct policy languages -->
         <ul>
-            <li>Extension to the Community Solid Server</li>
-            <li>Provides a reference implementation of an Authorization agent
+            <li>Extension to the <a href="https://github.com/CommunitySolidServer/CommunitySolidServer">Community Solid Server</a></li>
+            <li>Provides a reference implementation of an <b>Authorization Agent</b>
                 <ul>
                     <li>Integrates with an Access Management app</li>
                     <li>Matching Access Needs against Grants via Policies</li>
@@ -405,6 +396,12 @@
 
     <section class="slide">
         <h2>Conclusion</h2>
+        <ul>
+            <li>Architecture as a <b>foundation</b> for research into <b>access control</b> and <b>data usage policies</b></li>
+            <li>Built on top of the Solid specification through <b>abstractions</b></li>
+            <li>And some of the more recent <b>community proposals</b></li>
+            <li>Further work is needed from technical, legal and user experience perspectives.</li>
+        </ul>
         <img class="place bottom right logo-slide" src="media/logo_ugent_en.svg" alt="Ghent University">
     </section>
 
