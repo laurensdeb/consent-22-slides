@@ -87,7 +87,7 @@
                 An architecture for enforcing data protection in Solid
             </li>
             <li>
-                Implementation
+                Discussion
             </li>
             <li>
                 Conclusion
@@ -97,11 +97,11 @@
     </section>
 
     <section class="slide">
-        <h2>An introduction to the Solid project</h2>
+        <h2>An introduction to <a href="https://solidproject.org/">the Solid project</a></h2>
         <div class="columns two">
             <img src="https://solidproject.org/assets/img/solid-emblem.svg" height="300" />
             <ul>
-                <li>Project aiming to restore end-users' control over their data</li>
+                <li>Restoring end-users' control over their data</li>
                 <li>Brainchild of Sir Tim-Berners Lee<br />(cfr. <a
                         href="https://webfoundation.org/2017/03/web-turns-28-letter/">Three Challenges for the Web</a>,
                     2017)</li>
@@ -143,23 +143,23 @@
         <h2>The Solid specification<sup>1</sup></h2>
         <div class="columns three">
             <ul>
-                <b>Linked Data Platform</b>
+                <b><a href="https://www.w3.org/TR/ldp/">Linked Data Platform</a></b>
                 <ul lang="ru">
                     <li>Read/write-access to resources</li>
                     <li>Specific affordances for handling Linked Data</li>
                 </ul>
             </ul>
             <ul>
-                <b>WebID & Solid OIDC</b>
+                <b><a href="https://www.w3.org/2005/Incubator/webid/spec/">WebID</a> & <a href="https://solidproject.org/TR/oidc">Solid OIDC</a></b>
                 <ul lang="ru">
                     <li>Identification and authentication</li>
                     <li>In a decentralized manner</li>
                 </ul>
             </ul>
             <ul>
-                <b>Web Access Control</b>
+                <b><a href="https://solidproject.org/TR/wac">Web Access Control</a></b>
                 <ul lang="ru">
-                    <li>Define Access Control Policy over resources</li>
+                    <li>Define Access Control policy over resources</li>
                     <li>Based on Access Control Lists</li>
                     <li>Expressed as Linked Data</li>
                 </ul>
@@ -237,7 +237,7 @@
     <section class="slide">
         <h2>Problem Statement</h2>
         <ul>
-            <b>Web Access Control as an Access Control Policy language</b>
+            <b>Web Access Control as an Access Control policy language</b>
             <li>Suited for simple use cases</li>
             <li>Lacks expressivity & interpretability in data processing applications</li>
             <b>Limited research into implemention of data sharing patterns in Solid</b>
@@ -270,13 +270,13 @@
     <section class="slide">
         <h2 style="margin-bottom: 10px;">Related Work</h2>
         <ul>
-            <b>Data Privacy Vocabulary</b>
+            <b><a href="https://www.w3.org/ns/dpv">Data Privacy Vocabulary</a></b>
             <li>Linked Data vocabulary modeling information related to processing of personal data</li>
             <li>Based on requirements from Data Protection regulations</li>
-            <b>ODRL: The Open Digital Rights Language</b>
+            <b><a href="https://www.w3.org/TR/odrl-model/">ODRL: The Open Digital Rights Language</a></b>
             <li>Language for expressing policies using deontic concepts (permission, prohibitions, obligation).</li>
-            <li>ODRL profile was proposed, as an extension to Solid's Access Control mechanism</li>
-            <b>SPECIAL: The SPECIAL policy language</b>
+            <li><a href="https://ieeexplore.ieee.org/document/9583717">ODRL profile</a> was proposed, as an extension to Solid's Access Control mechanism</li>
+            <b><a href="https://specialprivacy.ercim.eu/">SPECIAL: The SPECIAL policy language</a></b>
             <li>Research project with the goal of reconciling big data applications with regulatory requirements</li>
         </ul>
         <img class="place bottom right logo-slide" src="media/logo_ugent_en.svg" alt="Ghent University">
@@ -285,15 +285,15 @@
     <section class="slide">
         <h2>Architecture: Background</h2>
         <ul>
-            <li>Solid's Data Interoperability Panel
+            <li><a href="https://github.com/solid/data-interoperability-panel">Solid's Data Interoperability Panel</a>
                 <ul>
                     <li>Objective of enabling <b>safe</b> and <b>effective</b> interoperability</li>
-                    <li>Through <b>abstraction</b> of resource organization (Shape Trees)</li>
+                    <li>Through <b>abstraction</b> of resource organization (<a href="https://shapetrees.org/TR/specification/">Shape Trees</a>)</li>
                     <li>And by <b>standardizing</b> the mechanics of requesting and granting access</li>
                     <li>Introduces the concept of a trusted <b>"Authorization Agent"</b></li>
                 </ul>
             </li>
-            <li>Linked Data Integrity & Authentication
+            <li><a href="https://w3c-ccg.github.io/data-integrity-spec/">Linked Data Integrity & Authentication</a>
                 <ul>
                     <li>Introduces <b>authentication</b> and <b>data integrity</b> capabilities to Linked Data</li>
                 </ul>
@@ -377,24 +377,6 @@
     </section>
 
     <section class="slide">
-        <h2>Implementation</h2>
-        <!-- Aim of the implementation is to deliver the necessary building blocks for 
-        a modular authorization agent that can be supplemented with distinct policy languages -->
-        <ul>
-            <li>Extension to the <a href="https://github.com/CommunitySolidServer/CommunitySolidServer">Community Solid Server</a></li>
-            <li>Provides a reference implementation of an <b>Authorization Agent</b>
-                <ul>
-                    <li>Integrates with an Access Management app</li>
-                    <li>Matching Access Needs against Grants via Policies</li>
-                    <li>Modify relevant Access Control Rules in the Pod</li>
-                </ul>
-            </li>
-            <li>Currently under development</li>
-        </ul>
-        <img class="place bottom right logo-slide" src="media/logo_ugent_en.svg" alt="Ghent University">
-    </section>
-
-    <section class="slide">
         <h2>Conclusion</h2>
         <ul>
             <li>Architecture as a <b>foundation</b> for research into <b>access control</b> and <b>data usage policies</b></li>
@@ -403,6 +385,10 @@
             <li>Further work is needed from technical, legal and user experience perspectives.</li>
         </ul>
         <img class="place bottom right logo-slide" src="media/logo_ugent_en.svg" alt="Ghent University">
+    </section>
+    <section class="slide" style="text-align: center;">
+        <img height="400"src="media/29102249075_540e699135_k.jpg" alt="Building showing the quote 'The next big thing will be a lot of small things'" />
+        <small>Photo by <a href="https://www.flickr.com/photos/iandolphin/29102249075">Ian Dolphin, 2016</a>.</small>
     </section>
 
     <section class="slide">
